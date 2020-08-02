@@ -29,7 +29,7 @@ namespace RosSharp.RosBridgeClient
             byte[] byteSlice = new byte[pointCloud2.point_step];
             for (long i = 0; i < I; i++)
             {
-                Array.Copy(pointCloud2.data, i * pointCloud2.point_step, byteSlice, 0, pointCloud2.point_step);
+                Array.Copy(pointCloud2.data, Convert.ToInt32(i * pointCloud2.point_step), byteSlice, 0, Convert.ToInt32(pointCloud2.point_step));
                 Points[i] = new RgbPoint3(byteSlice, pointCloud2.fields);
             }
         }
@@ -78,7 +78,7 @@ namespace RosSharp.RosBridgeClient
             foreach (var field in fields)
             {
                 byte[] slice = new byte[field.count * 4];
-                Array.Copy(bytes, field.offset, slice, 0, field.count * 4);
+                Array.Copy(bytes, Convert.ToInt32(field.offset), slice, 0, Convert.ToInt32(field.count * 4));
 
                 switch (field.name)
                 {

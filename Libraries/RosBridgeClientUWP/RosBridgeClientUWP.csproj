@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{473E1A95-178E-4377-97A5-91D0FDACFE7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RosBridgeClientUWP</RootNamespace>
+    <AssemblyName>RosBridgeClientUWP</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\RosBridgeClient\Actionlib\ActionClient.cs">
+      <Link>Actionlib\ActionClient.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Actionlib\ActionServer.cs">
+      <Link>Actionlib\ActionServer.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Actionlib\FibonacciActionClient.cs">
+      <Link>Actionlib\FibonacciActionClient.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Actionlib\FibonacciActionServer.cs">
+      <Link>Actionlib\FibonacciActionServer.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\BaseMessages\Actions\Action.cs">
+      <Link>BaseMessages\Actions\Action.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\BaseMessages\Actions\ActionFeedback.cs">
+      <Link>BaseMessages\Actions\ActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\BaseMessages\Actions\ActionGoal.cs">
+      <Link>BaseMessages\Actions\ActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\BaseMessages\Actions\ActionResult.cs">
+      <Link>BaseMessages\Actions\ActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Log.cs">
+      <Link>Log.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Actionlib\msg\ActionStatus.cs">
+      <Link>MessageTypes\Actionlib\msg\ActionStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\BaseMessages\Std\msg\Duration.cs">
+      <Link>BaseMessages\Std\msg\Duration.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\BaseMessages\Std\msg\Time.cs">
+      <Link>BaseMessages\Std\msg\Time.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Communicators.cs">
+      <Link>Communicators.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\BaseMessages\Message.cs">
+      <Link>BaseMessages\Message.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ActionlibTutorials\action\FibonacciAction.cs">
+      <Link>MessageTypes\ActionlibTutorials\action\FibonacciAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ActionlibTutorials\action\FibonacciActionFeedback.cs">
+      <Link>MessageTypes\ActionlibTutorials\action\FibonacciActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ActionlibTutorials\action\FibonacciActionGoal.cs">
+      <Link>MessageTypes\ActionlibTutorials\action\FibonacciActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ActionlibTutorials\action\FibonacciActionResult.cs">
+      <Link>MessageTypes\ActionlibTutorials\action\FibonacciActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ActionlibTutorials\action\FibonacciFeedback.cs">
+      <Link>MessageTypes\ActionlibTutorials\action\FibonacciFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ActionlibTutorials\action\FibonacciGoal.cs">
+      <Link>MessageTypes\ActionlibTutorials\action\FibonacciGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ActionlibTutorials\action\FibonacciResult.cs">
+      <Link>MessageTypes\ActionlibTutorials\action\FibonacciResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Actionlib\msg\GoalID.cs">
+      <Link>MessageTypes\Actionlib\msg\GoalID.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Actionlib\msg\GoalStatus.cs">
+      <Link>MessageTypes\Actionlib\msg\GoalStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Actionlib\msg\GoalStatusArray.cs">
+      <Link>MessageTypes\Actionlib\msg\GoalStatusArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\FileServer\srv\GetBinaryFileRequest.cs">
+      <Link>MessageTypes\FileServer\srv\GetBinaryFileRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\FileServer\srv\GetBinaryFileResponse.cs">
+      <Link>MessageTypes\FileServer\srv\GetBinaryFileResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\FileServer\srv\SaveBinaryFileRequest.cs">
+      <Link>MessageTypes\FileServer\srv\SaveBinaryFileRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\FileServer\srv\SaveBinaryFileResponse.cs">
+      <Link>MessageTypes\FileServer\srv\SaveBinaryFileResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Accel.cs">
+      <Link>MessageTypes\Geometry\msg\Accel.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\AccelStamped.cs">
+      <Link>MessageTypes\Geometry\msg\AccelStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\AccelWithCovariance.cs">
+      <Link>MessageTypes\Geometry\msg\AccelWithCovariance.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\AccelWithCovarianceStamped.cs">
+      <Link>MessageTypes\Geometry\msg\AccelWithCovarianceStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Inertia.cs">
+      <Link>MessageTypes\Geometry\msg\Inertia.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\InertiaStamped.cs">
+      <Link>MessageTypes\Geometry\msg\InertiaStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Point.cs">
+      <Link>MessageTypes\Geometry\msg\Point.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Point32.cs">
+      <Link>MessageTypes\Geometry\msg\Point32.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\PointStamped.cs">
+      <Link>MessageTypes\Geometry\msg\PointStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Polygon.cs">
+      <Link>MessageTypes\Geometry\msg\Polygon.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\PolygonStamped.cs">
+      <Link>MessageTypes\Geometry\msg\PolygonStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Pose.cs">
+      <Link>MessageTypes\Geometry\msg\Pose.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Pose2D.cs">
+      <Link>MessageTypes\Geometry\msg\Pose2D.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\PoseArray.cs">
+      <Link>MessageTypes\Geometry\msg\PoseArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\PoseStamped.cs">
+      <Link>MessageTypes\Geometry\msg\PoseStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\PoseWithCovariance.cs">
+      <Link>MessageTypes\Geometry\msg\PoseWithCovariance.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\PoseWithCovarianceStamped.cs">
+      <Link>MessageTypes\Geometry\msg\PoseWithCovarianceStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Quaternion.cs">
+      <Link>MessageTypes\Geometry\msg\Quaternion.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\QuaternionStamped.cs">
+      <Link>MessageTypes\Geometry\msg\QuaternionStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Transform.cs">
+      <Link>MessageTypes\Geometry\msg\Transform.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\TransformStamped.cs">
+      <Link>MessageTypes\Geometry\msg\TransformStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Twist.cs">
+      <Link>MessageTypes\Geometry\msg\Twist.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\TwistStamped.cs">
+      <Link>MessageTypes\Geometry\msg\TwistStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\TwistWithCovariance.cs">
+      <Link>MessageTypes\Geometry\msg\TwistWithCovariance.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\TwistWithCovarianceStamped.cs">
+      <Link>MessageTypes\Geometry\msg\TwistWithCovarianceStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Vector3.cs">
+      <Link>MessageTypes\Geometry\msg\Vector3.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Vector3Stamped.cs">
+      <Link>MessageTypes\Geometry\msg\Vector3Stamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\Wrench.cs">
+      <Link>MessageTypes\Geometry\msg\Wrench.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Geometry\msg\WrenchStamped.cs">
+      <Link>MessageTypes\Geometry\msg\WrenchStamped.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\ExecuteTrajectoryAction.cs">
+      <Link>MessageTypes\Moveit\action\ExecuteTrajectoryAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\ExecuteTrajectoryActionFeedback.cs">
+      <Link>MessageTypes\Moveit\action\ExecuteTrajectoryActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\ExecuteTrajectoryActionGoal.cs">
+      <Link>MessageTypes\Moveit\action\ExecuteTrajectoryActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\ExecuteTrajectoryActionResult.cs">
+      <Link>MessageTypes\Moveit\action\ExecuteTrajectoryActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\ExecuteTrajectoryFeedback.cs">
+      <Link>MessageTypes\Moveit\action\ExecuteTrajectoryFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\ExecuteTrajectoryGoal.cs">
+      <Link>MessageTypes\Moveit\action\ExecuteTrajectoryGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\ExecuteTrajectoryResult.cs">
+      <Link>MessageTypes\Moveit\action\ExecuteTrajectoryResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupAction.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupActionFeedback.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupActionGoal.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupActionResult.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupFeedback.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupGoal.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupResult.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupSequenceAction.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupSequenceAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupSequenceActionFeedback.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupSequenceActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupSequenceActionGoal.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupSequenceActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupSequenceActionResult.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupSequenceActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupSequenceFeedback.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupSequenceFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupSequenceGoal.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupSequenceGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\MoveGroupSequenceResult.cs">
+      <Link>MessageTypes\Moveit\action\MoveGroupSequenceResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PickupAction.cs">
+      <Link>MessageTypes\Moveit\action\PickupAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PickupActionFeedback.cs">
+      <Link>MessageTypes\Moveit\action\PickupActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PickupActionGoal.cs">
+      <Link>MessageTypes\Moveit\action\PickupActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PickupActionResult.cs">
+      <Link>MessageTypes\Moveit\action\PickupActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PickupFeedback.cs">
+      <Link>MessageTypes\Moveit\action\PickupFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PickupGoal.cs">
+      <Link>MessageTypes\Moveit\action\PickupGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PickupResult.cs">
+      <Link>MessageTypes\Moveit\action\PickupResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PlaceAction.cs">
+      <Link>MessageTypes\Moveit\action\PlaceAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PlaceActionFeedback.cs">
+      <Link>MessageTypes\Moveit\action\PlaceActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PlaceActionGoal.cs">
+      <Link>MessageTypes\Moveit\action\PlaceActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PlaceActionResult.cs">
+      <Link>MessageTypes\Moveit\action\PlaceActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PlaceFeedback.cs">
+      <Link>MessageTypes\Moveit\action\PlaceFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PlaceGoal.cs">
+      <Link>MessageTypes\Moveit\action\PlaceGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\action\PlaceResult.cs">
+      <Link>MessageTypes\Moveit\action\PlaceResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\AllowedCollisionEntry.cs">
+      <Link>MessageTypes\Moveit\msg\AllowedCollisionEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\AllowedCollisionMatrix.cs">
+      <Link>MessageTypes\Moveit\msg\AllowedCollisionMatrix.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\AttachedCollisionObject.cs">
+      <Link>MessageTypes\Moveit\msg\AttachedCollisionObject.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\BoundingVolume.cs">
+      <Link>MessageTypes\Moveit\msg\BoundingVolume.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\CartesianPoint.cs">
+      <Link>MessageTypes\Moveit\msg\CartesianPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\CartesianTrajectory.cs">
+      <Link>MessageTypes\Moveit\msg\CartesianTrajectory.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\CartesianTrajectoryPoint.cs">
+      <Link>MessageTypes\Moveit\msg\CartesianTrajectoryPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\CollisionObject.cs">
+      <Link>MessageTypes\Moveit\msg\CollisionObject.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\ConstraintEvalResult.cs">
+      <Link>MessageTypes\Moveit\msg\ConstraintEvalResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\Constraints.cs">
+      <Link>MessageTypes\Moveit\msg\Constraints.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\ContactInformation.cs">
+      <Link>MessageTypes\Moveit\msg\ContactInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\CostSource.cs">
+      <Link>MessageTypes\Moveit\msg\CostSource.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\DisplayRobotState.cs">
+      <Link>MessageTypes\Moveit\msg\DisplayRobotState.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\DisplayTrajectory.cs">
+      <Link>MessageTypes\Moveit\msg\DisplayTrajectory.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\GenericTrajectory.cs">
+      <Link>MessageTypes\Moveit\msg\GenericTrajectory.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\Grasp.cs">
+      <Link>MessageTypes\Moveit\msg\Grasp.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\GripperTranslation.cs">
+      <Link>MessageTypes\Moveit\msg\GripperTranslation.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\JointConstraint.cs">
+      <Link>MessageTypes\Moveit\msg\JointConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\JointLimits.cs">
+      <Link>MessageTypes\Moveit\msg\JointLimits.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\KinematicSolverInfo.cs">
+      <Link>MessageTypes\Moveit\msg\KinematicSolverInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\LinkPadding.cs">
+      <Link>MessageTypes\Moveit\msg\LinkPadding.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\LinkScale.cs">
+      <Link>MessageTypes\Moveit\msg\LinkScale.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\MotionPlanDetailedResponse.cs">
+      <Link>MessageTypes\Moveit\msg\MotionPlanDetailedResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\MotionPlanRequest.cs">
+      <Link>MessageTypes\Moveit\msg\MotionPlanRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\MotionPlanResponse.cs">
+      <Link>MessageTypes\Moveit\msg\MotionPlanResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\MotionSequenceItem.cs">
+      <Link>MessageTypes\Moveit\msg\MotionSequenceItem.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\MotionSequenceRequest.cs">
+      <Link>MessageTypes\Moveit\msg\MotionSequenceRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\MotionSequenceResponse.cs">
+      <Link>MessageTypes\Moveit\msg\MotionSequenceResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\MoveItErrorCodes.cs">
+      <Link>MessageTypes\Moveit\msg\MoveItErrorCodes.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\ObjectColor.cs">
+      <Link>MessageTypes\Moveit\msg\ObjectColor.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\OrientationConstraint.cs">
+      <Link>MessageTypes\Moveit\msg\OrientationConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\OrientedBoundingBox.cs">
+      <Link>MessageTypes\Moveit\msg\OrientedBoundingBox.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PlaceLocation.cs">
+      <Link>MessageTypes\Moveit\msg\PlaceLocation.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PlannerInterfaceDescription.cs">
+      <Link>MessageTypes\Moveit\msg\PlannerInterfaceDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PlannerParams.cs">
+      <Link>MessageTypes\Moveit\msg\PlannerParams.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PlanningOptions.cs">
+      <Link>MessageTypes\Moveit\msg\PlanningOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PlanningScene.cs">
+      <Link>MessageTypes\Moveit\msg\PlanningScene.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PlanningSceneComponents.cs">
+      <Link>MessageTypes\Moveit\msg\PlanningSceneComponents.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PlanningSceneWorld.cs">
+      <Link>MessageTypes\Moveit\msg\PlanningSceneWorld.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PositionConstraint.cs">
+      <Link>MessageTypes\Moveit\msg\PositionConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\PositionIKRequest.cs">
+      <Link>MessageTypes\Moveit\msg\PositionIKRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\RobotState.cs">
+      <Link>MessageTypes\Moveit\msg\RobotState.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\RobotTrajectory.cs">
+      <Link>MessageTypes\Moveit\msg\RobotTrajectory.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\TrajectoryConstraints.cs">
+      <Link>MessageTypes\Moveit\msg\TrajectoryConstraints.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\VisibilityConstraint.cs">
+      <Link>MessageTypes\Moveit\msg\VisibilityConstraint.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\msg\WorkspaceParameters.cs">
+      <Link>MessageTypes\Moveit\msg\WorkspaceParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ApplyPlanningSceneRequest.cs">
+      <Link>MessageTypes\Moveit\srv\ApplyPlanningSceneRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ApplyPlanningSceneResponse.cs">
+      <Link>MessageTypes\Moveit\srv\ApplyPlanningSceneResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ChangeControlDimensionsRequest.cs">
+      <Link>MessageTypes\Moveit\srv\ChangeControlDimensionsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ChangeControlDimensionsResponse.cs">
+      <Link>MessageTypes\Moveit\srv\ChangeControlDimensionsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ChangeDriftDimensionsRequest.cs">
+      <Link>MessageTypes\Moveit\srv\ChangeDriftDimensionsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ChangeDriftDimensionsResponse.cs">
+      <Link>MessageTypes\Moveit\srv\ChangeDriftDimensionsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\CheckIfRobotStateExistsInWarehouseRequest.cs">
+      <Link>MessageTypes\Moveit\srv\CheckIfRobotStateExistsInWarehouseRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\CheckIfRobotStateExistsInWarehouseResponse.cs">
+      <Link>MessageTypes\Moveit\srv\CheckIfRobotStateExistsInWarehouseResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\DeleteRobotStateFromWarehouseRequest.cs">
+      <Link>MessageTypes\Moveit\srv\DeleteRobotStateFromWarehouseRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\DeleteRobotStateFromWarehouseResponse.cs">
+      <Link>MessageTypes\Moveit\srv\DeleteRobotStateFromWarehouseResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ExecuteKnownTrajectoryRequest.cs">
+      <Link>MessageTypes\Moveit\srv\ExecuteKnownTrajectoryRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ExecuteKnownTrajectoryResponse.cs">
+      <Link>MessageTypes\Moveit\srv\ExecuteKnownTrajectoryResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetCartesianPathRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetCartesianPathRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetCartesianPathResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetCartesianPathResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetMotionPlanRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetMotionPlanRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetMotionPlanResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetMotionPlanResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetMotionSequenceRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetMotionSequenceRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetMotionSequenceResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetMotionSequenceResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetPlannerParamsRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetPlannerParamsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetPlannerParamsResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetPlannerParamsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetPlanningSceneRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetPlanningSceneRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetPlanningSceneResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetPlanningSceneResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetPositionFKRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetPositionFKRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetPositionFKResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetPositionFKResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetPositionIKRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetPositionIKRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetPositionIKResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetPositionIKResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetRobotStateFromWarehouseRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetRobotStateFromWarehouseRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetRobotStateFromWarehouseResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetRobotStateFromWarehouseResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetStateValidityRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GetStateValidityRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GetStateValidityResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GetStateValidityResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GraspPlanningRequest.cs">
+      <Link>MessageTypes\Moveit\srv\GraspPlanningRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\GraspPlanningResponse.cs">
+      <Link>MessageTypes\Moveit\srv\GraspPlanningResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ListRobotStatesInWarehouseRequest.cs">
+      <Link>MessageTypes\Moveit\srv\ListRobotStatesInWarehouseRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\ListRobotStatesInWarehouseResponse.cs">
+      <Link>MessageTypes\Moveit\srv\ListRobotStatesInWarehouseResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\LoadMapRequest.cs">
+      <Link>MessageTypes\Moveit\srv\LoadMapRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\LoadMapResponse.cs">
+      <Link>MessageTypes\Moveit\srv\LoadMapResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\QueryPlannerInterfacesRequest.cs">
+      <Link>MessageTypes\Moveit\srv\QueryPlannerInterfacesRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\QueryPlannerInterfacesResponse.cs">
+      <Link>MessageTypes\Moveit\srv\QueryPlannerInterfacesResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\RenameRobotStateInWarehouseRequest.cs">
+      <Link>MessageTypes\Moveit\srv\RenameRobotStateInWarehouseRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\RenameRobotStateInWarehouseResponse.cs">
+      <Link>MessageTypes\Moveit\srv\RenameRobotStateInWarehouseResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\SaveMapRequest.cs">
+      <Link>MessageTypes\Moveit\srv\SaveMapRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\SaveMapResponse.cs">
+      <Link>MessageTypes\Moveit\srv\SaveMapResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\SaveRobotStateToWarehouseRequest.cs">
+      <Link>MessageTypes\Moveit\srv\SaveRobotStateToWarehouseRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\SaveRobotStateToWarehouseResponse.cs">
+      <Link>MessageTypes\Moveit\srv\SaveRobotStateToWarehouseResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\SetPlannerParamsRequest.cs">
+      <Link>MessageTypes\Moveit\srv\SetPlannerParamsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\SetPlannerParamsResponse.cs">
+      <Link>MessageTypes\Moveit\srv\SetPlannerParamsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\UpdatePointcloudOctomapRequest.cs">
+      <Link>MessageTypes\Moveit\srv\UpdatePointcloudOctomapRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Moveit\srv\UpdatePointcloudOctomapResponse.cs">
+      <Link>MessageTypes\Moveit\srv\UpdatePointcloudOctomapResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\GetMapAction.cs">
+      <Link>MessageTypes\Nav\msg\GetMapAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\GetMapActionFeedback.cs">
+      <Link>MessageTypes\Nav\msg\GetMapActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\GetMapActionGoal.cs">
+      <Link>MessageTypes\Nav\msg\GetMapActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\GetMapActionResult.cs">
+      <Link>MessageTypes\Nav\msg\GetMapActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\GetMapFeedback.cs">
+      <Link>MessageTypes\Nav\msg\GetMapFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\GetMapGoal.cs">
+      <Link>MessageTypes\Nav\msg\GetMapGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\GetMapResult.cs">
+      <Link>MessageTypes\Nav\msg\GetMapResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\GridCells.cs">
+      <Link>MessageTypes\Nav\msg\GridCells.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\MapMetaData.cs">
+      <Link>MessageTypes\Nav\msg\MapMetaData.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\OccupancyGrid.cs">
+      <Link>MessageTypes\Nav\msg\OccupancyGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\Odometry.cs">
+      <Link>MessageTypes\Nav\msg\Odometry.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\msg\Path.cs">
+      <Link>MessageTypes\Nav\msg\Path.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\srv\GetMapRequest.cs">
+      <Link>MessageTypes\Nav\srv\GetMapRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\srv\GetMapResponse.cs">
+      <Link>MessageTypes\Nav\srv\GetMapResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\srv\GetPlanRequest.cs">
+      <Link>MessageTypes\Nav\srv\GetPlanRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\srv\GetPlanResponse.cs">
+      <Link>MessageTypes\Nav\srv\GetPlanResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\srv\SetMapRequest.cs">
+      <Link>MessageTypes\Nav\srv\SetMapRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Nav\srv\SetMapResponse.cs">
+      <Link>MessageTypes\Nav\srv\SetMapResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\action\ObjectRecognitionAction.cs">
+      <Link>MessageTypes\ObjectRecognition\action\ObjectRecognitionAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\action\ObjectRecognitionActionFeedback.cs">
+      <Link>MessageTypes\ObjectRecognition\action\ObjectRecognitionActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\action\ObjectRecognitionActionGoal.cs">
+      <Link>MessageTypes\ObjectRecognition\action\ObjectRecognitionActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\action\ObjectRecognitionActionResult.cs">
+      <Link>MessageTypes\ObjectRecognition\action\ObjectRecognitionActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\action\ObjectRecognitionFeedback.cs">
+      <Link>MessageTypes\ObjectRecognition\action\ObjectRecognitionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\action\ObjectRecognitionGoal.cs">
+      <Link>MessageTypes\ObjectRecognition\action\ObjectRecognitionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\action\ObjectRecognitionResult.cs">
+      <Link>MessageTypes\ObjectRecognition\action\ObjectRecognitionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\msg\ObjectInformation.cs">
+      <Link>MessageTypes\ObjectRecognition\msg\ObjectInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\msg\ObjectType.cs">
+      <Link>MessageTypes\ObjectRecognition\msg\ObjectType.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\msg\RecognizedObject.cs">
+      <Link>MessageTypes\ObjectRecognition\msg\RecognizedObject.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\msg\RecognizedObjectArray.cs">
+      <Link>MessageTypes\ObjectRecognition\msg\RecognizedObjectArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\msg\Table.cs">
+      <Link>MessageTypes\ObjectRecognition\msg\Table.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\msg\TableArray.cs">
+      <Link>MessageTypes\ObjectRecognition\msg\TableArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\srv\GetObjectInformationRequest.cs">
+      <Link>MessageTypes\ObjectRecognition\srv\GetObjectInformationRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\ObjectRecognition\srv\GetObjectInformationResponse.cs">
+      <Link>MessageTypes\ObjectRecognition\srv\GetObjectInformationResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Octomap\msg\Octomap.cs">
+      <Link>MessageTypes\Octomap\msg\Octomap.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Octomap\msg\OctomapWithPose.cs">
+      <Link>MessageTypes\Octomap\msg\OctomapWithPose.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Octomap\srv\BoundingBoxQueryRequest.cs">
+      <Link>MessageTypes\Octomap\srv\BoundingBoxQueryRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Octomap\srv\BoundingBoxQueryResponse.cs">
+      <Link>MessageTypes\Octomap\srv\BoundingBoxQueryResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Octomap\srv\GetOctomapRequest.cs">
+      <Link>MessageTypes\Octomap\srv\GetOctomapRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Octomap\srv\GetOctomapResponse.cs">
+      <Link>MessageTypes\Octomap\srv\GetOctomapResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\msg\TypeDef.cs">
+      <Link>MessageTypes\Rosapi\msg\TypeDef.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\DeleteParamRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\DeleteParamRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\DeleteParamResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\DeleteParamResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\GetActionServersRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\GetActionServersRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\GetActionServersResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\GetActionServersResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\GetParamNamesRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\GetParamNamesRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\GetParamNamesResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\GetParamNamesResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\GetParamRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\GetParamRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\GetParamResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\GetParamResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\GetTimeRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\GetTimeRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\GetTimeResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\GetTimeResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\HasParamRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\HasParamRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\HasParamResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\HasParamResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\MessageDetailsRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\MessageDetailsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\MessageDetailsResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\MessageDetailsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\NodeDetailsRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\NodeDetailsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\NodeDetailsResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\NodeDetailsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\NodesRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\NodesRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\NodesResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\NodesResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\PublishersRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\PublishersRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\PublishersResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\PublishersResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\SearchParamRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\SearchParamRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\SearchParamResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\SearchParamResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceHostRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceHostRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceHostResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceHostResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceNodeRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceNodeRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceNodeResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceNodeResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceProvidersRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceProvidersRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceProvidersResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceProvidersResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceRequestDetailsRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceRequestDetailsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceRequestDetailsResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceRequestDetailsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceResponseDetailsRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceResponseDetailsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceResponseDetailsResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceResponseDetailsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServicesForTypeRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\ServicesForTypeRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServicesForTypeResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\ServicesForTypeResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServicesRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\ServicesRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServicesResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\ServicesResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceTypeRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceTypeRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\ServiceTypeResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\ServiceTypeResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\SetParamRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\SetParamRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\SetParamResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\SetParamResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\SubscribersRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\SubscribersRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\SubscribersResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\SubscribersResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\TopicsForTypeRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\TopicsForTypeRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\TopicsForTypeResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\TopicsForTypeResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\TopicsRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\TopicsRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\TopicsResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\TopicsResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\TopicTypeRequest.cs">
+      <Link>MessageTypes\Rosapi\srv\TopicTypeRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Rosapi\srv\TopicTypeResponse.cs">
+      <Link>MessageTypes\Rosapi\srv\TopicTypeResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\BatteryState.cs">
+      <Link>MessageTypes\Sensor\msg\BatteryState.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\CameraInfo.cs">
+      <Link>MessageTypes\Sensor\msg\CameraInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\ChannelFloat32.cs">
+      <Link>MessageTypes\Sensor\msg\ChannelFloat32.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\CompressedImage.cs">
+      <Link>MessageTypes\Sensor\msg\CompressedImage.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\FluidPressure.cs">
+      <Link>MessageTypes\Sensor\msg\FluidPressure.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\Illuminance.cs">
+      <Link>MessageTypes\Sensor\msg\Illuminance.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\Image.cs">
+      <Link>MessageTypes\Sensor\msg\Image.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\Imu.cs">
+      <Link>MessageTypes\Sensor\msg\Imu.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\JointState.cs">
+      <Link>MessageTypes\Sensor\msg\JointState.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\Joy.cs">
+      <Link>MessageTypes\Sensor\msg\Joy.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\JoyFeedback.cs">
+      <Link>MessageTypes\Sensor\msg\JoyFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\JoyFeedbackArray.cs">
+      <Link>MessageTypes\Sensor\msg\JoyFeedbackArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\LaserEcho.cs">
+      <Link>MessageTypes\Sensor\msg\LaserEcho.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\LaserScan.cs">
+      <Link>MessageTypes\Sensor\msg\LaserScan.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\MagneticField.cs">
+      <Link>MessageTypes\Sensor\msg\MagneticField.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\MultiDOFJointState.cs">
+      <Link>MessageTypes\Sensor\msg\MultiDOFJointState.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\MultiEchoLaserScan.cs">
+      <Link>MessageTypes\Sensor\msg\MultiEchoLaserScan.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\NavSatFix.cs">
+      <Link>MessageTypes\Sensor\msg\NavSatFix.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\NavSatStatus.cs">
+      <Link>MessageTypes\Sensor\msg\NavSatStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\PointCloud.cs">
+      <Link>MessageTypes\Sensor\msg\PointCloud.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\PointCloud2.cs">
+      <Link>MessageTypes\Sensor\msg\PointCloud2.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\PointField.cs">
+      <Link>MessageTypes\Sensor\msg\PointField.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\Range.cs">
+      <Link>MessageTypes\Sensor\msg\Range.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\RegionOfInterest.cs">
+      <Link>MessageTypes\Sensor\msg\RegionOfInterest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\RelativeHumidity.cs">
+      <Link>MessageTypes\Sensor\msg\RelativeHumidity.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\Temperature.cs">
+      <Link>MessageTypes\Sensor\msg\Temperature.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\msg\TimeReference.cs">
+      <Link>MessageTypes\Sensor\msg\TimeReference.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\srv\SetCameraInfoRequest.cs">
+      <Link>MessageTypes\Sensor\srv\SetCameraInfoRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Sensor\srv\SetCameraInfoResponse.cs">
+      <Link>MessageTypes\Sensor\srv\SetCameraInfoResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Shape\msg\Mesh.cs">
+      <Link>MessageTypes\Shape\msg\Mesh.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Shape\msg\MeshTriangle.cs">
+      <Link>MessageTypes\Shape\msg\MeshTriangle.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Shape\msg\Plane.cs">
+      <Link>MessageTypes\Shape\msg\Plane.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Shape\msg\SolidPrimitive.cs">
+      <Link>MessageTypes\Shape\msg\SolidPrimitive.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Bool.cs">
+      <Link>MessageTypes\Std\msg\Bool.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Byte.cs">
+      <Link>MessageTypes\Std\msg\Byte.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\ByteMultiArray.cs">
+      <Link>MessageTypes\Std\msg\ByteMultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Char.cs">
+      <Link>MessageTypes\Std\msg\Char.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\ColorRGBA.cs">
+      <Link>MessageTypes\Std\msg\ColorRGBA.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Empty.cs">
+      <Link>MessageTypes\Std\msg\Empty.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Float32.cs">
+      <Link>MessageTypes\Std\msg\Float32.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Float32MultiArray.cs">
+      <Link>MessageTypes\Std\msg\Float32MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Float64.cs">
+      <Link>MessageTypes\Std\msg\Float64.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Float64MultiArray.cs">
+      <Link>MessageTypes\Std\msg\Float64MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Header.cs">
+      <Link>MessageTypes\Std\msg\Header.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Int16.cs">
+      <Link>MessageTypes\Std\msg\Int16.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Int16MultiArray.cs">
+      <Link>MessageTypes\Std\msg\Int16MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Int32.cs">
+      <Link>MessageTypes\Std\msg\Int32.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Int32MultiArray.cs">
+      <Link>MessageTypes\Std\msg\Int32MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Int64.cs">
+      <Link>MessageTypes\Std\msg\Int64.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Int64MultiArray.cs">
+      <Link>MessageTypes\Std\msg\Int64MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Int8.cs">
+      <Link>MessageTypes\Std\msg\Int8.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\Int8MultiArray.cs">
+      <Link>MessageTypes\Std\msg\Int8MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\MultiArrayDimension.cs">
+      <Link>MessageTypes\Std\msg\MultiArrayDimension.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\MultiArrayLayout.cs">
+      <Link>MessageTypes\Std\msg\MultiArrayLayout.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\String.cs">
+      <Link>MessageTypes\Std\msg\String.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\UInt16.cs">
+      <Link>MessageTypes\Std\msg\UInt16.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\UInt16MultiArray.cs">
+      <Link>MessageTypes\Std\msg\UInt16MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\UInt32.cs">
+      <Link>MessageTypes\Std\msg\UInt32.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\UInt32MultiArray.cs">
+      <Link>MessageTypes\Std\msg\UInt32MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\UInt64.cs">
+      <Link>MessageTypes\Std\msg\UInt64.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\UInt64MultiArray.cs">
+      <Link>MessageTypes\Std\msg\UInt64MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\UInt8.cs">
+      <Link>MessageTypes\Std\msg\UInt8.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\msg\UInt8MultiArray.cs">
+      <Link>MessageTypes\Std\msg\UInt8MultiArray.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\srv\EmptyRequest.cs">
+      <Link>MessageTypes\Std\srv\EmptyRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\srv\EmptyResponse.cs">
+      <Link>MessageTypes\Std\srv\EmptyResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\srv\SetBoolRequest.cs">
+      <Link>MessageTypes\Std\srv\SetBoolRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\srv\SetBoolResponse.cs">
+      <Link>MessageTypes\Std\srv\SetBoolResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\srv\TriggerRequest.cs">
+      <Link>MessageTypes\Std\srv\TriggerRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Std\srv\TriggerResponse.cs">
+      <Link>MessageTypes\Std\srv\TriggerResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\LookupTransformAction.cs">
+      <Link>MessageTypes\Tf2\msg\LookupTransformAction.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\LookupTransformActionFeedback.cs">
+      <Link>MessageTypes\Tf2\msg\LookupTransformActionFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\LookupTransformActionGoal.cs">
+      <Link>MessageTypes\Tf2\msg\LookupTransformActionGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\LookupTransformActionResult.cs">
+      <Link>MessageTypes\Tf2\msg\LookupTransformActionResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\LookupTransformFeedback.cs">
+      <Link>MessageTypes\Tf2\msg\LookupTransformFeedback.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\LookupTransformGoal.cs">
+      <Link>MessageTypes\Tf2\msg\LookupTransformGoal.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\LookupTransformResult.cs">
+      <Link>MessageTypes\Tf2\msg\LookupTransformResult.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\TF2Error.cs">
+      <Link>MessageTypes\Tf2\msg\TF2Error.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\msg\TFMessage.cs">
+      <Link>MessageTypes\Tf2\msg\TFMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\srv\FrameGraphRequest.cs">
+      <Link>MessageTypes\Tf2\srv\FrameGraphRequest.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Tf2\srv\FrameGraphResponse.cs">
+      <Link>MessageTypes\Tf2\srv\FrameGraphResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Trajectory\msg\JointTrajectory.cs">
+      <Link>MessageTypes\Trajectory\msg\JointTrajectory.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Trajectory\msg\JointTrajectoryPoint.cs">
+      <Link>MessageTypes\Trajectory\msg\JointTrajectoryPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Trajectory\msg\MultiDOFJointTrajectory.cs">
+      <Link>MessageTypes\Trajectory\msg\MultiDOFJointTrajectory.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\MessageTypes\Trajectory\msg\MultiDOFJointTrajectoryPoint.cs">
+      <Link>MessageTypes\Trajectory\msg\MultiDOFJointTrajectoryPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\PointCloud.cs">
+      <Link>PointCloud.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Protocols\MessageEventArgs.cs">
+      <Link>Protocols\MessageEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Protocols\IProtocol.cs">
+      <Link>Protocols\IProtocol.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Protocols\Protocol.cs">
+      <Link>Protocols\Protocol.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Protocols\WebSocketSharpProtocol.cs">
+      <Link>Protocols\WebSocketSharpProtocol.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\RosSocket.cs">
+      <Link>RosSocket.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Communication.cs">
+      <Link>Communication.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Protocols\WebSocketNetProtocol.cs">
+      <Link>Protocols\WebSocketNetProtocol.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Protocols\WebSocketUWPProtocol.cs">
+      <Link>Protocols\WebSocketUWPProtocol.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Serializers\ISerializer.cs">
+      <Link>Serializers\ISerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Serializers\MicrosoftSerializer.cs">
+      <Link>Serializers\MicrosoftSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Serializers\NewtonsoftBsonSerializer.cs">
+      <Link>Serializers\NewtonsoftBsonSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\Serializers\NewtonsoftJsonSerializer.cs">
+      <Link>Serializers\NewtonsoftJsonSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\UrdfTransfer\UrdfTransfer.cs">
+      <Link>UrdfTransfer\UrdfTransfer.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\UrdfTransfer\UrdfTransferFromRos.cs">
+      <Link>UrdfTransfer\UrdfTransferFromRos.cs</Link>
+    </Compile>
+    <Compile Include="..\RosBridgeClient\UrdfTransfer\UrdfTransferToRos.cs">
+      <Link>UrdfTransfer\UrdfTransferToRos.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\RosBridgeClientUWP.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.10</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson">
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.2\lib\netstandard2.0\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>..\packages\System.Text.Json.4.7.1\lib\netstandard2.0\System.Text.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

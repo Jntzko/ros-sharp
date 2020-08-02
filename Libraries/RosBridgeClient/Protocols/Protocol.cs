@@ -15,21 +15,28 @@ limitations under the License.
 
 namespace RosSharp.RosBridgeClient.Protocols
 {
-    public enum Protocol { WebSocketSharp, WebSocketNET };
+    public enum Protocol { WebSocketSharp, WebSocketNET, WebSocketUWP };
 
     public class ProtocolInitializer
     {
         public static IProtocol GetProtocol(Protocol protocol, string serverURL)
         {
+#if WINDOWS_UWP
+            return new WebSocketUWPProtocol(serverURL);
+#else
             switch (protocol)
             {
                 case Protocol.WebSocketSharp:
                     return new WebSocketSharpProtocol(serverURL);
                 case Protocol.WebSocketNET:
                     return new WebSocketNetProtocol(serverURL);
+                case Protocol.WebSocketUWP:
+                    //Debug.Log("WebSocketUWP only works when deployed to HoloLens, defaulting to WebSocketNetProtocol");
+                    return new WebSocketNetProtocol(serverURL);
                 default:
                     return null;
             }
+#endif
         }
     }
 }

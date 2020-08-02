@@ -14,6 +14,7 @@ limitations under the License.
 */
 
 using System;
+using System.Reflection;
 
 namespace RosSharp.RosBridgeClient
 {
@@ -25,7 +26,11 @@ namespace RosSharp.RosBridgeClient
     {
         public static string GetRosName<T>() where T : Message
         {
+#if !WINDOWS_UWP
             return (string)typeof(T).GetField("RosMessageName").GetRawConstantValue();
+#else
+            return (string)typeof(T).GetTypeInfo().GetDeclaredField("RosMessageName").GetValue(null);
+#endif
         }
     }
     internal abstract class Publisher : Communicator
