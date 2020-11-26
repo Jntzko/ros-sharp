@@ -311,6 +311,7 @@
     <Compile Include="MessageTypes\Octomap\srv\BoundingBoxQueryResponse.cs" />
     <Compile Include="MessageTypes\Octomap\srv\GetOctomapRequest.cs" />
     <Compile Include="MessageTypes\Octomap\srv\GetOctomapResponse.cs" />
+    <Compile Include="MessageTypes\Pr2Controllers\msg\Pr2GripperCommand.cs" />
     <Compile Include="MessageTypes\Rosapi\msg\TypeDef.cs" />
     <Compile Include="MessageTypes\Rosapi\srv\DeleteParamRequest.cs" />
     <Compile Include="MessageTypes\Rosapi\srv\DeleteParamResponse.cs" />
