@@ -109,6 +109,8 @@
     <Compile Include="MessageTypes\Actionlib\msg\GoalID.cs" />
     <Compile Include="MessageTypes\Actionlib\msg\GoalStatus.cs" />
     <Compile Include="MessageTypes\Actionlib\msg\GoalStatusArray.cs" />
+    <Compile Include="MessageTypes\AprilTagRos\msg\AprilTagDetection.cs" />
+    <Compile Include="MessageTypes\AprilTagRos\msg\AprilTagDetectionArray.cs" />
     <Compile Include="MessageTypes\FileServer\srv\GetBinaryFileRequest.cs" />
     <Compile Include="MessageTypes\FileServer\srv\GetBinaryFileResponse.cs" />
     <Compile Include="MessageTypes\FileServer\srv\SaveBinaryFileRequest.cs" />
@@ -445,6 +447,7 @@
     <Compile Include="MessageTypes\Trajectory\msg\JointTrajectoryPoint.cs" />
     <Compile Include="MessageTypes\Trajectory\msg\MultiDOFJointTrajectory.cs" />
     <Compile Include="MessageTypes\Trajectory\msg\MultiDOFJointTrajectoryPoint.cs" />
+    <Compile Include="MessageTypes\Visualization\msg\MarkerArray.cs" />
     <Compile Include="MessageTypes\Visualization\msg\Marker.cs" />
     <Compile Include="PointCloud.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
