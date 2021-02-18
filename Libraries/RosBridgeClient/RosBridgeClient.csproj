@@ -314,6 +314,8 @@
     <Compile Include="MessageTypes\Octomap\srv\GetOctomapRequest.cs" />
     <Compile Include="MessageTypes\Octomap\srv\GetOctomapResponse.cs" />
     <Compile Include="MessageTypes\Pr2Controllers\msg\Pr2GripperCommand.cs" />
+    <Compile Include="MessageTypes\Pr2GripperSensor\msg\PR2GripperSensorRTState.cs" />
+    <Compile Include="MessageTypes\Pr2GripperSensor\msg\PR2GripperFindContactData.cs" />
     <Compile Include="MessageTypes\Rosapi\msg\TypeDef.cs" />
     <Compile Include="MessageTypes\Rosapi\srv\DeleteParamRequest.cs" />
     <Compile Include="MessageTypes\Rosapi\srv\DeleteParamResponse.cs" />
@@ -432,6 +434,7 @@
     <Compile Include="MessageTypes\Std\srv\SetBoolResponse.cs" />
     <Compile Include="MessageTypes\Std\srv\TriggerRequest.cs" />
     <Compile Include="MessageTypes\Std\srv\TriggerResponse.cs" />
+    <Compile Include="MessageTypes\TamsUnityUtils\msg\SubstitutionMode.cs" />
     <Compile Include="MessageTypes\Tf2\msg\LookupTransformAction.cs" />
     <Compile Include="MessageTypes\Tf2\msg\LookupTransformActionFeedback.cs" />
     <Compile Include="MessageTypes\Tf2\msg\LookupTransformActionGoal.cs" />
