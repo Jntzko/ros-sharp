@@ -24,7 +24,7 @@ namespace RosSharp.RosBridgeClient.MessageTypes.Pr2GripperSensor
 
         public Time stamp { get; set; }
         public bool contact_conditions_met { get; set; }
-        public bool left_gripper_pad_contact { get; set; }
+        public bool left_fingertip_pad_contact { get; set; }
         public bool right_fingertip_pad_contact { get; set; }
         public double left_fingertip_pad_force { get; set; }
         public double right_fingertip_pad_force { get; set; }
@@ -36,7 +36,7 @@ namespace RosSharp.RosBridgeClient.MessageTypes.Pr2GripperSensor
         {
             this.stamp = new Time();
             this.contact_conditions_met = false;
-            this.left_gripper_pad_contact = false;
+            this.left_fingertip_pad_contact = false;
             this.right_fingertip_pad_contact = false;
             this.left_fingertip_pad_force = 0.0;
             this.right_fingertip_pad_force = 0.0;
@@ -44,11 +44,11 @@ namespace RosSharp.RosBridgeClient.MessageTypes.Pr2GripperSensor
             this.joint_effort = 0.0;
         }
 
-        public PR2GripperFindContactData(Time stamp, bool contact_conditions_met, bool left_gripper_pad_contact, bool right_fingertip_pad_contact, double left_fingertip_pad_force, double right_fingertip_pad_force, double joint_position, double joint_effort, Pr2GripperSensorRTState rtstate)
+        public PR2GripperFindContactData(Time stamp, bool contact_conditions_met, bool left_fingertip_pad_contact, bool right_fingertip_pad_contact, double left_fingertip_pad_force, double right_fingertip_pad_force, double joint_position, double joint_effort, Pr2GripperSensorRTState rtstate)
         {
             this.stamp = stamp;
             this.contact_conditions_met = contact_conditions_met;
-            this.left_gripper_pad_contact = left_gripper_pad_contact;
+            this.left_fingertip_pad_contact = left_fingertip_pad_contact;
             this.right_fingertip_pad_contact = right_fingertip_pad_contact;
             this.left_fingertip_pad_force = left_fingertip_pad_force;
             this.right_fingertip_pad_force = right_fingertip_pad_force;
