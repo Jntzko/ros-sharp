@@ -14,7 +14,7 @@ namespace RosSharp.RosBridgeClient.MessageTypes.Visualization
 {
     public class Marker : Message
     {
-        public override string RosMessageName => "visualization_msgs/Marker";
+        public const string RosMessageName = "visualization_msgs/Marker";
 
         public const uint ARROW = 0;
         public const uint CUBE = 1;

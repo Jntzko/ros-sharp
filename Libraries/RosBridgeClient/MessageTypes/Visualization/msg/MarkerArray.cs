@@ -11,7 +11,7 @@ namespace RosSharp.RosBridgeClient.MessageTypes.Visualization
 {
     public class MarkerArray : Message
     {
-        public override string RosMessageName => "visualization_msgs/MarkerArray";
+        public const string RosMessageName = "visualization_msgs/MarkerArray";
 
         public Marker[] markers { get; set; }
         
